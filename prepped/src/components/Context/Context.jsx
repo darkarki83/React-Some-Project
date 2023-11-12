@@ -4,17 +4,21 @@ import './Context.css';
 
 function Context() {
   return (
-    <div>
-      <img src="https://i.imgur.com/4AiXzf8.png" width="40" alt="Context" />
-      <h1>Fun facts about React</h1>
-      <ul>
-        <li>Was first released in 2013 </li>
-        <li>Was    </li>
-        <li>Has </li>
-        <li>Is </li>
-        <li>Pawers </li>
-      </ul>
-    </div>
+    <header>
+      <nav>
+        <img src="https://i.imgur.com/4AiXzf8.png" width="40" alt="Context" />
+      </nav>
+      <h1>Reasons i'm excited to learn React</h1>
+      <ol>
+        <li>Popular library </li>
+        <li>I'm more likely to get a job as a developer</li>
+      </ol>
+      <footer>
+        <small>
+          2023 Artiom development. All rights reserved
+        </small>
+      </footer>
+    </header>
   );
 }
 
