@@ -1,14 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Context from './components/Context/Context';
+import Header from './components/Header/Header';
+import Technologies from './components/Technologies/Technologies';
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
       <header className="App-header">
-        <Context />
+        <Header />
+        <Technologies />
       </header>
     </div>
   );
