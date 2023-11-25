@@ -1,0 +1,30 @@
+.post_manager {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.post_manager textarea {
+  width: 90%;
+  height: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.post_manager button {
+  width: 100px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.post_manager button:hover {
+  background-color: darkblue;
+}
