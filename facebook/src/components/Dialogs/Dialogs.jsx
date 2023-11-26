@@ -1,4 +1,6 @@
 import s from './Dialogs.module.css';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
 
 export default function Dialogs (props) {
 
@@ -18,31 +20,33 @@ export default function Dialogs (props) {
         { message: "See you soon.", id: 5 }
       ];
 
-  //let dialogsElements = mockDialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-  //let messagesElements = mockMessages.map(m => <Message message={m.message} />);
-  let newMessageText = props.newMessageText;
+  let dialogsElements = mockDialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+  let messagesElements = mockMessages.map(m => <Message message={m.message} />);
+  //let newMessageText = props.newMessageText;
 
   let onSendMessageClick = () => {
-    props.sendMessage();
+    //prop.s.sendMessage();
   };
 
-  let onNewMessageChange = (e) => {
+  /*let onNewMessageChange = (e) => {
     let text = e.target.value;
     props.updateNewMessageText(text);
-  };
+  };*/
 
   return (
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>
-        {/* {dialogsElements} */}
+        {dialogsElements}
+        <div></div>
       </div>
+
       <div className={s.messages}>
-        {/* {messagesElements} */}
+        {messagesElements}
         <div>
           <div>
             <textarea
-            //   value={newMessageText}
-            //   onChange={onNewMessageChange}
+               //value={newMessageText}
+               //onChange={onNewMessageChange}
               placeholder="Enter your message"
             ></textarea>
           </div>

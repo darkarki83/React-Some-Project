@@ -8,9 +8,16 @@
 .item {
     color: white;
     padding: 10px;
+    text-decoration: none;
   }
 
 .active {
+    color: gold;
+    padding: 10px;
+  }
+
+  
+.item a.activeLink {
     color: gold;
     padding: 10px;
   }

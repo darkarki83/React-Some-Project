@@ -1,0 +1,10 @@
+/* DialogItem.module.css */
+.dialogItem {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+  }
+  
+  .dialogItem:hover {
+    background-color: #f5f5f5;
+  }
