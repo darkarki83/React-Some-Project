@@ -1,6 +1,7 @@
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
+import { NavLink } from 'react-router-dom';
 
 export default function Dialogs (props) {
 
@@ -20,7 +21,16 @@ export default function Dialogs (props) {
         { message: "See you soon.", id: 5 }
       ];
 
-  let dialogsElements = mockDialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+      let dialogsElements = mockDialogs.map(d => (
+        <NavLink 
+          to={`/dialogs/${d.id}`} 
+          key={d.id} 
+          className={({ isActive }) => isActive ? s.active : ''}
+        >
+          <DialogItem name={d.name} id={d.id} />
+        </NavLink>
+      ));
+
   let messagesElements = mockMessages.map(m => <Message message={m.message} />);
   //let newMessageText = props.newMessageText;
 
@@ -37,9 +47,7 @@ export default function Dialogs (props) {
     <div className={s.dialogs}>
       <div className={s.dialogs_items}>
         {dialogsElements}
-        <div></div>
       </div>
-
       <div className={s.messages}>
         {messagesElements}
         <div>
