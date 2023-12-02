@@ -2,26 +2,10 @@ import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
 import { NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
 
 export default function Dialogs (props) {
-
-    const mockDialogs = [
-        { name: "Alice", id: 1 },
-        { name: "Bob", id: 2 },
-        { name: "Charlie", id: 3 },
-        { name: "Diana", id: 4 },
-        { name: "Eve", id: 5 }
-      ];
-      
-      const mockMessages = [
-        { message: "Hi there!", id: 1 },
-        { message: "How are you?", id: 2 },
-        { message: "Let's meet tomorrow.", id: 3 },
-        { message: "Thank you!", id: 4 },
-        { message: "See you soon.", id: 5 }
-      ];
-
-      let dialogsElements = mockDialogs.map(d => (
+      let dialogsElements = props.messagesPage.dialogs.map(d => (
         <NavLink 
           to={`/dialogs/${d.id}`} 
           key={d.id} 
@@ -31,17 +15,15 @@ export default function Dialogs (props) {
         </NavLink>
       ));
 
-  let messagesElements = mockMessages.map(m => <Message message={m.message} />);
-  //let newMessageText = props.newMessageText;
+  let messagesElements = props.messagesPage.messages.map(m => <Message message={m.message} />);
 
   let onSendMessageClick = () => {
-    //prop.s.sendMessage();
+    props.state.sendMessage();
   };
 
-  /*let onNewMessageChange = (e) => {
-    let text = e.target.value;
-    props.updateNewMessageText(text);
-  };*/
+  let onNewMessageChange = (e) => {
+    props.state.updateNewMessageText(e.target.value);
+  };
 
   return (
     <div className={s.dialogs}>
@@ -53,8 +35,8 @@ export default function Dialogs (props) {
         <div>
           <div>
             <textarea
-               //value={newMessageText}
-               //onChange={onNewMessageChange}
+               value={props.newMessageText}
+               onChange={onNewMessageChange}
               placeholder="Enter your message"
             ></textarea>
           </div>
